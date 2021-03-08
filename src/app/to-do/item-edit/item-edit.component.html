@@ -1,0 +1,37 @@
+<h1>{{ title }}</h1>
+<hr>
+
+<form [formGroup]="formGroup" autocomplete="off" novalidate *ngIf="item">
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<thead class="thead-light">
+				<tr>
+					<th class="auto">Status</th>
+					<th>Task</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="auto">
+						<button class="btn" (click)="updateStatus()"
+							[ngClass]="{ 'btn-success': checked.value, 'btn-warning': !checked.value }">
+							{{ checked.value ? "completed" : "uncompleted" }}
+						</button>
+					</td>
+					<td>
+						<div class="form-group no-margin">
+							<input type="text" class="form-control" id="task" formControlName="task" [ngClass]="validation(task)">
+							<div class="invalid-feedback">Task is required</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="form-submit">
+		<button class="btn btn-success mr-2" (click)="submit()">Save</button>
+		<button class="btn btn-danger mr-2" (click)="delete()">Delete</button>
+		<button class="btn btn-secondary" (click)="back()">Back</button>
+	</div>
+</form>

@@ -1,0 +1,42 @@
+<h1>{{ title }}</h1>
+<hr>
+
+<div class="toolbar mb-3">
+	<button class="btn btn-primary" (click)="create()">Create</button>
+	<button class="btn btn-primary" (click)="showAll()">Show all</button>
+	<div class="input-group search">
+		<div class="input-group-prepend">
+			<button class="btn btn-outline-secondary" (click)="search(searchInput)">Search</button>
+		</div>
+		<input #searchInput type="text" class="form-control" (keyup.enter)="search(searchInput)">
+	</div>
+</div>
+
+<div class="table-responsive">
+	<table class="table table-bordered">
+		<thead class="thead-light">
+			<tr>
+				<th class="auto">Status</th>
+				<th>Task</th>
+				<th class="auto">Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of items">
+				<td class="auto">
+					<button class="btn" (click)="updateStatus(item)"
+						[ngClass]="{ 'btn-success': item.checked, 'btn-warning': !item.checked }">
+						{{ item.checked ? "completed" : "uncompleted" }}
+					</button>
+				</td>
+				<td>{{ item.task }}</td>
+				<td class="auto">
+					<div class="edit">
+						<button class="btn btn-info mr-2" (click)="edit(item)">Edit</button>
+						<button class="btn btn-danger" (click)="delete(item)">Delete</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "task": "** task 1",
+      "checked": true
+    },
+    {
+      "task": "** task 4 ",
+      "checked": true,
+      "id": 4
+    },
+    {
+      "task": "go to gym",
+      "checked": false,
+      "id": 6
+    }
+  ]
+}
