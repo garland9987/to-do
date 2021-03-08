@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Run json server
 
-Run `npm run server-database` to create database.
-Run `npm run server` to start json server.
+Step 1: run `npm run server-database` to create a database.
+Step 2: run `npm run server` to start json server.
 
 ## Development server
 
